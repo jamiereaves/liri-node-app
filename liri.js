@@ -105,12 +105,16 @@ for (i = 3; i < nodeArgs.length; i++) {
   }
 }
     }
+
     spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
-       
-      console.log(JSON.parse(data)); 
+        
+        console.log("Artist: " + data.tracks.items[0].artists[0].name + 
+        "\nSong Name: " + data.tracks.items[0].name + "\nPreview URL: " + data.tracks.items[0].preview_url + 
+        "\nAlbum: " + data.tracks.items[0].album.name); 
+        
       });
     
 
